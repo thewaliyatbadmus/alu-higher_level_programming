@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Defines a Student class with JSON serialization/deserialization."""
 
+
 class Student:
     """Student class with first_name, last_name, and age."""
 
@@ -19,7 +20,8 @@ class Student:
         Otherwise, all attributes are returned.
         """
         if isinstance(attrs, list) and all(isinstance(attr, str) for attr in attrs):
-            return {attr: getattr(self, attr) for attr in attrs if hasattr(self, attr)}
+            return {attr: getattr(self, attr)
+                    for attr in attrs if hasattr(self, attr)}
         return self.__dict__.copy()
 
     def reload_from_json(self, json):
