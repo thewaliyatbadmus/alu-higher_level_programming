@@ -22,4 +22,3 @@ class Student:
                 all(isinstance(elem, str) for elem in attrs)):
             return {k: getattr(self, k) for k in attrs if hasattr(self, k)}
         return self.__dict__
-
